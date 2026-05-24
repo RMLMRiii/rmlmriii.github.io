@@ -106,7 +106,7 @@
        HERO
     ========================== */
 
-    .hero {
+   .hero {
 
   min-height: 100vh;
 
@@ -116,9 +116,9 @@
 
   justify-content: center;
 
-  padding-top: 120px;
+  padding-top: 90px;
 
-  padding-bottom: 60px;
+  padding-bottom: 70px;
 
   color: white;
 
@@ -135,20 +135,26 @@
   background-position: center;
 }
 
-    .hero-wrapper {
+   .hero-wrapper {
 
-      width: 70%;
-    }
+  width: 80%;
 
-    .hero-grid {
+  max-width: 1350px;
 
-  display: grid;
+  margin: 0 auto;
 
-  grid-template-columns: 1.35fr 0.65fr;
+  background:
+    rgba(10,15,30,0.28);
 
-  gap: 18px;
+  backdrop-filter: blur(4px);
 
-  align-items: center;
+  border-radius: 34px;
+
+  padding:
+    70px 70px 65px 70px;
+
+  border:
+    1px solid rgba(255,255,255,0.06);
 }
 
     .eyebrow {
@@ -604,13 +610,16 @@
         width: 82%;
       }
 
-      .hero-grid,
-      .split,
-      .cards,
-      .grid-4 {
+     .hero-grid {
 
-        grid-template-columns: 1fr;
-      }
+  display: grid;
+
+  grid-template-columns: 1.25fr 0.75fr;
+
+  gap: 40px;
+
+  align-items: center;
+}
 
       .profile-card {
 
