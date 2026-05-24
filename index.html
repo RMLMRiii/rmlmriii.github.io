@@ -2,36 +2,21 @@
 <html lang="en">
 
 <head>
-
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0" />
-
-  <title>
-    Robert Lilly | Mechanical Engineering Portfolio
-  </title>
+  <title>Robert Lilly | Mechanical Engineering Portfolio</title>
 
   <style>
-
     * {
       box-sizing: border-box;
       scroll-behavior: smooth;
     }
 
     body {
-
       margin: 0;
-
-      font-family:
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        Arial,
-        sans-serif;
-
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
       background: #f5f7fb;
-
       color: #111827;
     }
 
@@ -39,706 +24,360 @@
       text-decoration: none;
     }
 
-    /* =========================
-       NAVBAR
-    ========================== */
-
     .navbar {
-
       position: sticky;
-
       top: 0;
-
       z-index: 1000;
-
       height: 72px;
-
       display: flex;
-
       justify-content: space-between;
-
       align-items: center;
-
       padding: 0 7%;
-
       background: rgba(255,255,255,0.92);
-
       backdrop-filter: blur(16px);
-
-      box-shadow:
-        0 1px 18px rgba(15,23,42,0.08);
+      box-shadow: 0 1px 18px rgba(15,23,42,0.08);
     }
 
     .nav-name {
-
       font-size: 21px;
-
       font-weight: 800;
-
       color: #0f172a;
-
       letter-spacing: -0.03em;
     }
 
     .nav-links {
-
       display: flex;
-
       gap: 26px;
-
       flex-wrap: wrap;
     }
 
     .nav-links a {
-
       color: #475569;
-
       font-weight: 600;
-
       font-size: 15px;
-
       transition: 0.2s ease;
     }
 
     .nav-links a:hover {
-
       color: #0284c7;
     }
 
-    /* =========================
-       HERO
-    ========================== */
-
     .hero {
-
       min-height: 92vh;
-
       padding: 100px 7%;
-
       display: flex;
-
       align-items: center;
-
       color: white;
-
       background-image:
-        linear-gradient(
-          90deg,
-          rgba(2,6,23,0.88),
-          rgba(2,6,23,0.55)
-        ),
+        linear-gradient(90deg, rgba(2,6,23,0.88), rgba(2,6,23,0.55)),
         url("https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1800&auto=format&fit=crop");
-
       background-size: cover;
-
       background-position: center;
     }
 
     .hero-grid {
-
       width: 100%;
-
       display: grid;
-
       grid-template-columns: 1.25fr 0.75fr;
-
       gap: 50px;
-
       align-items: center;
     }
 
     .eyebrow {
-
       color: #7dd3fc;
-
       text-transform: uppercase;
-
       letter-spacing: 0.18em;
-
       font-size: 13px;
-
       font-weight: 800;
-
       margin-bottom: 20px;
     }
 
     h1 {
-
-      font-size:
-        clamp(52px, 7vw, 84px);
-
+      font-size: clamp(52px, 7vw, 84px);
       line-height: 0.95;
-
       margin: 0 0 18px;
-
       letter-spacing: -0.06em;
     }
 
     .hero h2 {
-
-      font-size:
-        clamp(24px, 3vw, 34px);
-
+      font-size: clamp(24px, 3vw, 34px);
       color: #e2e8f0;
-
       margin: 0 0 24px;
-
       font-weight: 500;
     }
 
     .hero p {
-
       max-width: 760px;
-
       font-size: 19px;
-
       line-height: 1.75;
-
       color: #cbd5e1;
     }
 
-    /* =========================
-       PROFILE CARD
-    ========================== */
-
     .profile-card {
-
-      background:
-        rgba(255,255,255,0.12);
-
-      border:
-        1px solid rgba(255,255,255,0.20);
-
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.20);
       border-radius: 30px;
-
       padding: 28px;
-
       backdrop-filter: blur(18px);
-
-      box-shadow:
-        0 28px 80px rgba(0,0,0,0.35);
+      box-shadow: 0 28px 80px rgba(0,0,0,0.35);
     }
 
     .profile-image {
-
-      width: 100%;
-
+      width: 75%;
       aspect-ratio: 4 / 5;
-
       object-fit: cover;
-
       object-position: center top;
-
       border-radius: 24px;
-
-      border:
-        1px solid rgba(255,255,255,0.14);
-
-      box-shadow:
-        0 12px 30px rgba(0,0,0,0.35);
-
-      margin-bottom: 18px;
+      border: 1px solid rgba(255,255,255,0.14);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+      margin: 0 auto 18px;
+      display: block;
     }
 
     .profile-card p {
-
       color: #e2e8f0;
-
       font-size: 15px;
-
       line-height: 1.7;
-
       margin: 0;
     }
 
-    /* =========================
-       BUTTONS
-    ========================== */
-
     .buttons {
-
       display: flex;
-
       gap: 14px;
-
       flex-wrap: wrap;
-
       margin-top: 34px;
     }
 
     .button {
-
       display: inline-flex;
-
       align-items: center;
-
       justify-content: center;
-
       padding: 14px 24px;
-
       border-radius: 999px;
-
       background: #38bdf8;
-
       color: #020617;
-
       font-weight: 800;
-
       transition: all 0.25s ease;
-
-      box-shadow:
-        0 12px 30px rgba(56,189,248,0.28);
+      box-shadow: 0 12px 30px rgba(56,189,248,0.28);
     }
 
     .button:hover {
-
       transform: translateY(-3px);
-
       background: #7dd3fc;
     }
 
     .button.secondary {
-
       background: transparent;
-
       color: white;
-
-      border:
-        1px solid rgba(255,255,255,0.45);
-
+      border: 1px solid rgba(255,255,255,0.45);
       box-shadow: none;
     }
 
     .button.dark {
-
       background: #0f172a;
-
       color: white;
-
-      box-shadow:
-        0 10px 26px rgba(15,23,42,0.16);
+      box-shadow: 0 10px 26px rgba(15,23,42,0.16);
     }
 
-    /* =========================
-       SECTIONS
-    ========================== */
-
     .section {
-
       max-width: 1250px;
-
       margin: 0 auto;
-
       padding: 90px 7%;
     }
 
     .section-title {
-
-      font-size:
-        clamp(36px, 4vw, 50px);
-
+      font-size: clamp(36px, 4vw, 50px);
       letter-spacing: -0.05em;
-
       margin: 0 0 18px;
     }
 
     .section-lead {
-
       max-width: 850px;
-
       font-size: 18px;
-
       line-height: 1.75;
-
       color: #475569;
-
       margin-bottom: 40px;
     }
 
     .split {
-
       display: grid;
-
-      grid-template-columns:
-        1.1fr 0.9fr;
-
+      grid-template-columns: 1.1fr 0.9fr;
       gap: 24px;
     }
 
     .panel,
-    .card,
-    .mini-card {
-
+    .card {
       background: white;
-
       border-radius: 28px;
-
-      border:
-        1px solid #e2e8f0;
-
-      box-shadow:
-        0 18px 50px rgba(15,23,42,0.08);
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 18px 50px rgba(15,23,42,0.08);
     }
 
     .panel {
-
       padding: 34px;
     }
 
     .panel h3,
-    .card h3,
-    .mini-card h3 {
-
+    .card h3 {
       margin-top: 0;
-
       color: #0f172a;
     }
 
     .panel p,
     .panel li,
-    .card p,
-    .mini-card p {
-
+    .card p {
       color: #475569;
-
       line-height: 1.7;
     }
 
-    /* =========================
-       PROJECTS
-    ========================== */
-
     .cards {
-
       display: grid;
-
-      grid-template-columns:
-        repeat(3, 1fr);
-
+      grid-template-columns: repeat(3, 1fr);
       gap: 24px;
     }
 
     .card {
-
       overflow: hidden;
-
       transition: all 0.25s ease;
     }
 
     .card:hover {
-
       transform: translateY(-6px);
-
-      box-shadow:
-        0 28px 70px rgba(15,23,42,0.14);
+      box-shadow: 0 28px 70px rgba(15,23,42,0.14);
     }
 
     .card-img {
-
       height: 190px;
-
       background-size: cover;
-
       background-position: center;
     }
 
     .card-content {
-
       padding: 26px;
     }
 
     .card-link {
-
       display: inline-block;
-
       margin-top: 16px;
-
       color: #0284c7;
-
       font-weight: 800;
     }
 
-    /* =========================
-       SKILLS
-    ========================== */
-
     .grid-4 {
-
       display: grid;
-
-      grid-template-columns:
-        repeat(4, 1fr);
-
+      grid-template-columns: repeat(4, 1fr);
       gap: 16px;
     }
 
     .skill {
-
       padding: 18px;
-
       border-radius: 18px;
-
       background: white;
-
-      border:
-        1px solid #e2e8f0;
-
+      border: 1px solid #e2e8f0;
       font-weight: 800;
-
       color: #1e293b;
-
-      box-shadow:
-        0 10px 24px rgba(15,23,42,0.06);
+      box-shadow: 0 10px 24px rgba(15,23,42,0.06);
     }
-
-    /* =========================
-       DARK SECTION
-    ========================== */
-
-    .dark-section {
-
-      max-width: none;
-
-      background: #0f172a;
-
-      color: white;
-    }
-
-    .dark-inner {
-
-      max-width: 1250px;
-
-      margin: 0 auto;
-    }
-
-    .dark-section .section-title {
-
-      color: white;
-    }
-
-    .dark-section .section-lead {
-
-      color: #cbd5e1;
-    }
-
-    .mini-grid {
-
-      display: grid;
-
-      grid-template-columns:
-        repeat(4, 1fr);
-
-      gap: 18px;
-    }
-
-    .mini-card {
-
-      padding: 24px;
-
-      background: #111827;
-
-      border:
-        1px solid #334155;
-    }
-
-    .mini-card h3 {
-
-      color: #f8fafc;
-    }
-
-    .mini-card p {
-
-      color: #cbd5e1;
-    }
-
-    /* =========================
-       RESUME
-    ========================== */
 
     .resume-box {
-
       display: flex;
-
       justify-content: space-between;
-
       align-items: center;
-
       gap: 24px;
-
       padding: 34px;
-
       border-radius: 30px;
-
-      background:
-        linear-gradient(
-          135deg,
-          #ffffff,
-          #eef6ff
-        );
-
-      border:
-        1px solid #dbeafe;
-
-      box-shadow:
-        0 20px 60px rgba(15,23,42,0.1);
+      background: linear-gradient(135deg, #ffffff, #eef6ff);
+      border: 1px solid #dbeafe;
+      box-shadow: 0 20px 60px rgba(15,23,42,0.1);
     }
-
-    /* =========================
-       CONTACT
-    ========================== */
 
     .contact {
-
       text-align: center;
     }
 
-    /* =========================
-       FOOTER
-    ========================== */
-
     footer {
-
       text-align: center;
-
       padding: 34px 20px;
-
       background: white;
-
-      border-top:
-        1px solid #e2e8f0;
-
+      border-top: 1px solid #e2e8f0;
       color: #64748b;
     }
 
-    /* =========================
-       ANIMATION
-    ========================== */
-
     .fade-in {
-
       opacity: 0;
-
       transform: translateY(26px);
-
-      transition:
-        opacity 0.8s ease,
-        transform 0.8s ease;
+      transition: opacity 0.8s ease, transform 0.8s ease;
     }
 
     .fade-in.visible {
-
       opacity: 1;
-
       transform: translateY(0);
     }
 
-    /* =========================
-       MOBILE
-    ========================== */
-
     @media (max-width: 950px) {
-
       .navbar {
-
         height: auto;
-
         padding: 18px 24px;
-
         flex-direction: column;
-
         gap: 14px;
       }
 
       .nav-links {
-
         justify-content: center;
-
         gap: 14px;
       }
 
       .hero {
-
         padding: 72px 24px;
       }
 
       .hero-grid,
       .split,
       .cards,
-      .grid-4,
-      .mini-grid {
-
+      .grid-4 {
         grid-template-columns: 1fr;
       }
 
-      .section {
+      .profile-image {
+        width: 75%;
+      }
 
+      .section {
         padding: 70px 24px;
       }
 
       .resume-box {
-
         flex-direction: column;
-
         align-items: flex-start;
       }
-
     }
-
   </style>
-
 </head>
 
 <body>
 
-  <!-- NAVBAR -->
-
   <nav class="navbar">
-
-    <div class="nav-name">
-      Robert Lilly
-    </div>
+    <div class="nav-name">Robert Lilly</div>
 
     <div class="nav-links">
-
       <a href="#about">About</a>
-
       <a href="#projects">Projects</a>
-
       <a href="#skills">Skills</a>
-
       <a href="#experience">Experience</a>
-
-      <a href="#business-dna">Business DNA</a>
-
       <a href="#resume">Resume</a>
-
       <a href="#contact">Contact</a>
-
     </div>
-
   </nav>
 
-  <!-- HERO -->
-
   <header class="hero">
-
     <div class="hero-grid">
 
-      <!-- LEFT SIDE -->
-
       <div>
+        <div class="eyebrow">University of Connecticut Honors Program</div>
 
-        <div class="eyebrow">
-          University of Connecticut Honors Program
-        </div>
+        <h1>Robert Lilly</h1>
 
-        <h2>
-          Robert Lilly
-        </h2>
-
-        <h3>
-          Honors Mechanical Engineering Student
-        </h3>
+        <h2>Honors Mechanical Engineering Student</h2>
 
         <p>
           I am a University of Connecticut Honors mechanical engineering student focused on robotics,
@@ -748,38 +387,23 @@
         </p>
 
         <div class="buttons">
-
-          <a class="button"
-             href="#projects">
-
-            View Projects
-
-          </a>
+          <a class="button" href="#projects">View Projects</a>
 
           <a class="button secondary"
              href="https://github.com/RMLMRiii"
              target="_blank">
-
             GitHub
-
           </a>
 
           <a class="button secondary"
              href="https://www.linkedin.com/in/robertlilly3/"
              target="_blank">
-
             LinkedIn
-
           </a>
-
         </div>
-
       </div>
 
-      <!-- PROFILE CARD -->
-
       <div class="profile-card">
-
         <img
           src="robert lilly profile pic.png"
           alt="Robert Lilly"
@@ -791,21 +415,13 @@
           intelligent systems, engineering software,
           embedded technologies, and technical project development.
         </p>
-
       </div>
 
     </div>
-
   </header>
 
-  <!-- ABOUT -->
-
-  <section class="section fade-in"
-           id="about">
-
-    <h2 class="section-title">
-      About
-    </h2>
+  <section class="section fade-in" id="about">
+    <h2 class="section-title">About</h2>
 
     <p class="section-lead">
       I am building a professional engineering portfolio centered around robotics,
@@ -814,12 +430,8 @@
     </p>
 
     <div class="split">
-
       <div class="panel">
-
-        <h3>
-          Engineering Focus
-        </h3>
+        <h3>Engineering Focus</h3>
 
         <p>
           My interests include robotics systems,
@@ -830,39 +442,23 @@
           software, electronics, mechanics,
           and intelligent systems all work together.
         </p>
-
       </div>
 
       <div class="panel">
-
-        <h3>
-          Education
-        </h3>
+        <h3>Education</h3>
 
         <p>
           <strong>University of Connecticut</strong><br>
-
           Bachelor of Science in Mechanical Engineering<br>
-
           University Honors Program<br>
-
           Expected Graduation: 2028
         </p>
-
       </div>
-
     </div>
-
   </section>
 
-  <!-- PROJECTS -->
-
-  <section class="section fade-in"
-           id="projects">
-
-    <h2 class="section-title">
-      Featured Projects
-    </h2>
+  <section class="section fade-in" id="projects">
+    <h2 class="section-title">Featured Projects</h2>
 
     <p class="section-lead">
       Robotics, engineering software,
@@ -870,20 +466,13 @@
     </p>
 
     <div class="cards">
-
-      <!-- PROJECT 1 -->
-
       <div class="card">
-
         <div class="card-img"
              style="background-image:url('https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=900&auto=format&fit=crop');">
         </div>
 
         <div class="card-content">
-
-          <h3>
-            Arduino Ultrasonic Sensor
-          </h3>
+          <h3>Arduino Ultrasonic Sensor</h3>
 
           <p>
             Designed an Arduino-based ultrasonic sensing system
@@ -894,28 +483,18 @@
           <a class="card-link"
              href="https://github.com/RMLMRiii"
              target="_blank">
-
             View on GitHub →
-
           </a>
-
         </div>
-
       </div>
 
-      <!-- PROJECT 2 -->
-
       <div class="card">
-
         <div class="card-img"
              style="background-image:url('https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=900&auto=format&fit=crop');">
         </div>
 
         <div class="card-content">
-
-          <h3>
-            Engineering Software Tools
-          </h3>
+          <h3>Engineering Software Tools</h3>
 
           <p>
             Developed Python and MATLAB engineering tools involving
@@ -927,28 +506,18 @@
           <a class="card-link"
              href="https://github.com/RMLMRiii"
              target="_blank">
-
             View GitHub Portfolio →
-
           </a>
-
         </div>
-
       </div>
 
-      <!-- PROJECT 3 -->
-
       <div class="card">
-
         <div class="card-img"
              style="background-image:url('https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?q=80&w=900&auto=format&fit=crop');">
         </div>
 
         <div class="card-content">
-
-          <h3>
-            Engineering Simulation
-          </h3>
+          <h3>Engineering Simulation</h3>
 
           <p>
             Coursework and technical modeling experience using
@@ -959,27 +528,15 @@
           <a class="card-link"
              href="https://github.com/RMLMRiii"
              target="_blank">
-
             View Related Work →
-
           </a>
-
         </div>
-
       </div>
-
     </div>
-
   </section>
 
-  <!-- SKILLS -->
-
-  <section class="section fade-in"
-           id="skills">
-
-    <h2 class="section-title">
-      Skills & Tools
-    </h2>
+  <section class="section fade-in" id="skills">
+    <h2 class="section-title">Skills & Tools</h2>
 
     <p class="section-lead">
       Technical areas developed through coursework,
@@ -987,302 +544,129 @@
     </p>
 
     <div class="grid-4">
-
       <div class="skill">Python</div>
-
       <div class="skill">MATLAB</div>
-
       <div class="skill">SolidWorks</div>
-
       <div class="skill">CAD Modeling</div>
-
       <div class="skill">Arduino</div>
-
       <div class="skill">ANSYS Workbench</div>
-
       <div class="skill">Engineering Analysis</div>
-
       <div class="skill">Control Systems</div>
-
       <div class="skill">Robotics</div>
-
       <div class="skill">Mechatronics</div>
-
       <div class="skill">Embedded Systems</div>
-
       <div class="skill">Mechanical Design</div>
-
     </div>
-
   </section>
 
-  <!-- EXPERIENCE -->
-
-  <section class="section fade-in"
-           id="experience">
-
-    <h2 class="section-title">
-      Experience & Organizations
-    </h2>
+  <section class="section fade-in" id="experience">
+    <h2 class="section-title">Experience & Organizations</h2>
 
     <div class="split">
-
       <div class="panel">
-
-        <h3>
-          Engineering Organizations
-        </h3>
+        <h3>Engineering Organizations</h3>
 
         <ul>
-
           <li>FIRST at UConn</li>
-
           <li>Underwater Robotics Team at UConn</li>
-
           <li>FROST Robotics Club</li>
-
           <li>VEX Robotics Club</li>
-
         </ul>
-
       </div>
 
       <div class="panel">
-
-        <h3>
-          Awards & Certifications
-        </h3>
+        <h3>Awards & Certifications</h3>
 
         <ul>
-
           <li>Dean’s List — Spring 2025</li>
-
           <li>IBM AI Fundamentals Certification</li>
-
           <li>3rd Place — Southern New England VEX Championship</li>
-
           <li>Teacher’s Appreciation Scholarship</li>
-
           <li>First Degree Black Belt in Kempo Karate</li>
-
         </ul>
-
       </div>
-
     </div>
-
   </section>
 
-  <!-- BUSINESS DNA -->
-
-  <section class="section dark-section fade-in"
-           id="business-dna">
-
-    <div class="dark-inner">
-
-      <h2 class="section-title">
-        Business DNA
-      </h2>
-
-      <p class="section-lead">
-        My professional identity is built around systems thinking,
-        disciplined growth, technical curiosity,
-        and connecting robotics, software,
-        mechanics, and engineering analysis into practical solutions.
-      </p>
-
-      <div class="mini-grid">
-
-        <div class="mini-card">
-
-          <h3>
-            Systems Thinker
-          </h3>
-
-          <p>
-            I enjoy understanding how engineering systems interact.
-          </p>
-
-        </div>
-
-        <div class="mini-card">
-
-          <h3>
-            Hands-On Builder
-          </h3>
-
-          <p>
-            I learn through building, testing,
-            improving, and documenting projects.
-          </p>
-
-        </div>
-
-        <div class="mini-card">
-
-          <h3>
-            Robotics Focused
-          </h3>
-
-          <p>
-            My long-term interests center around robotics
-            and intelligent systems.
-          </p>
-
-        </div>
-
-        <div class="mini-card">
-
-          <h3>
-            Growth Driven
-          </h3>
-
-          <p>
-            I continuously develop technical skills
-            through projects and coursework.
-          </p>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-  <!-- RESUME -->
-
-  <section class="section fade-in"
-           id="resume">
-
-    <h2 class="section-title">
-      Resume
-    </h2>
+  <section class="section fade-in" id="resume">
+    <h2 class="section-title">Resume</h2>
 
     <div class="resume-box">
-
       <div>
-
-        <h3>
-          Professional Resume
-        </h3>
+        <h3>Professional Resume</h3>
 
         <p>
           Mechanical engineering, robotics,
           embedded systems, software development,
           engineering analysis, and technical organizations.
         </p>
-
       </div>
 
       <div class="buttons">
-
         <a class="button dark"
            href="Robert-Lilly-Resume.pdf"
            target="_blank">
-
           Download Resume
-
         </a>
 
         <a class="button dark"
            href="https://github.com/RMLMRiii"
            target="_blank">
-
           GitHub
-
         </a>
 
         <a class="button dark"
            href="https://www.linkedin.com/in/robertlilly3/"
            target="_blank">
-
           LinkedIn
-
         </a>
-
       </div>
-
     </div>
-
   </section>
 
-  <!-- CONTACT -->
+  <section class="section contact fade-in" id="contact">
+    <h2 class="section-title">Contact</h2>
 
-  <section class="section contact fade-in"
-           id="contact">
-
-    <h2 class="section-title">
-      Contact
-    </h2>
-
-    <p class="section-lead"
-       style="margin-left:auto;margin-right:auto;">
-
+    <p class="section-lead" style="margin-left:auto;margin-right:auto;">
       Connect with me through LinkedIn
       or explore my engineering projects on GitHub.
-
     </p>
 
-    <div class="buttons"
-         style="justify-content:center;">
-
+    <div class="buttons" style="justify-content:center;">
       <a class="button dark"
          href="https://github.com/RMLMRiii"
          target="_blank">
-
         GitHub
-
       </a>
 
       <a class="button dark"
          href="https://www.linkedin.com/in/robertlilly3/"
          target="_blank">
-
         LinkedIn
-
       </a>
-
     </div>
-
   </section>
 
-  <!-- FOOTER -->
-
   <footer>
-
     © 2026 Robert Lilly • Mechanical Engineering Portfolio
-
   </footer>
 
-  <!-- FADE IN ANIMATION -->
-
   <script>
+    const fadeElements = document.querySelectorAll(".fade-in");
 
-    const fadeElements =
-      document.querySelectorAll(".fade-in");
-
-    const observer =
-      new IntersectionObserver((entries) => {
-
-        entries.forEach(entry => {
-
-          if (entry.isIntersecting) {
-
-            entry.target.classList.add("visible");
-
-          }
-
-        });
-
-      }, {
-        threshold: 0.15
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
       });
+    }, {
+      threshold: 0.15
+    });
 
     fadeElements.forEach(element =>
       observer.observe(element)
     );
-
   </script>
 
 </body>
