@@ -18,10 +18,6 @@
       color: #111827;
     }
 
-    a {
-      color: inherit;
-    }
-
     .navbar {
       position: sticky;
       top: 0;
@@ -158,7 +154,7 @@
       color: #020617;
       text-decoration: none;
       font-weight: 800;
-      transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+      transition: all 0.25s ease;
       box-shadow: 0 12px 30px rgba(56, 189, 248, 0.28);
     }
 
@@ -170,14 +166,14 @@
     .button.secondary {
       background: transparent;
       color: white;
-      border: 1px solid rgba(255, 255, 255, 0.5);
+      border: 1px solid rgba(255,255,255,0.5);
       box-shadow: none;
     }
 
     .button.dark {
       background: #0f172a;
       color: white;
-      box-shadow: 0 12px 28px rgba(15, 23, 42, 0.18);
+      box-shadow: 0 12px 28px rgba(15,23,42,0.18);
     }
 
     .section {
@@ -189,8 +185,7 @@
     .section-title {
       font-size: clamp(34px, 4vw, 48px);
       letter-spacing: -0.05em;
-      margin: 0 0 18px;
-      color: #0f172a;
+      margin-bottom: 18px;
     }
 
     .section-lead {
@@ -211,22 +206,16 @@
       background: white;
       border: 1px solid #e2e8f0;
       border-radius: 28px;
-      box-shadow: 0 18px 50px rgba(15, 23, 42, 0.08);
+      box-shadow: 0 18px 50px rgba(15,23,42,0.08);
     }
 
     .panel {
       padding: 34px;
     }
 
-    .panel h3, .card h3, .mini-card h3 {
-      margin-top: 0;
-      color: #0f172a;
-    }
-
-    .panel p, .panel li, .card p, .mini-card p {
+    .panel p, .panel li, .card p {
       color: #475569;
       line-height: 1.7;
-      font-size: 16px;
     }
 
     .cards {
@@ -237,12 +226,11 @@
 
     .card {
       overflow: hidden;
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      transition: all 0.25s ease;
     }
 
     .card:hover {
       transform: translateY(-6px);
-      box-shadow: 0 26px 70px rgba(15, 23, 42, 0.14);
     }
 
     .card-img {
@@ -256,11 +244,11 @@
     }
 
     .card-link {
-      margin-top: 18px;
       display: inline-block;
-      text-decoration: none;
+      margin-top: 18px;
       font-weight: 800;
       color: #0284c7;
+      text-decoration: none;
     }
 
     .grid-4 {
@@ -276,7 +264,7 @@
       border: 1px solid #e2e8f0;
       font-weight: 800;
       color: #1e293b;
-      box-shadow: 0 10px 26px rgba(15, 23, 42, 0.06);
+      box-shadow: 0 10px 26px rgba(15,23,42,0.06);
     }
 
     .dark-section {
@@ -298,19 +286,6 @@
       color: #cbd5e1;
     }
 
-    .dark-section .mini-card {
-      background: #111827;
-      border-color: #334155;
-    }
-
-    .dark-section .mini-card h3 {
-      color: #f8fafc;
-    }
-
-    .dark-section .mini-card p {
-      color: #cbd5e1;
-    }
-
     .mini-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -319,6 +294,16 @@
 
     .mini-card {
       padding: 24px;
+      background: #111827;
+      border: 1px solid #334155;
+    }
+
+    .mini-card h3 {
+      color: #f8fafc;
+    }
+
+    .mini-card p {
+      color: #cbd5e1;
     }
 
     .resume-box {
@@ -328,9 +313,9 @@
       gap: 24px;
       padding: 34px;
       background: linear-gradient(135deg, #ffffff, #eef6ff);
-      border: 1px solid #dbeafe;
       border-radius: 30px;
-      box-shadow: 0 20px 60px rgba(15, 23, 42, 0.1);
+      border: 1px solid #dbeafe;
+      box-shadow: 0 20px 60px rgba(15,23,42,0.1);
     }
 
     .contact {
@@ -357,6 +342,7 @@
     }
 
     @media (max-width: 900px) {
+
       .navbar {
         height: auto;
         padding: 18px 24px;
@@ -373,7 +359,11 @@
         padding: 72px 24px;
       }
 
-      .hero-grid, .split, .cards, .grid-4, .mini-grid {
+      .hero-grid,
+      .split,
+      .cards,
+      .grid-4,
+      .mini-grid {
         grid-template-columns: 1fr;
       }
 
@@ -386,266 +376,420 @@
         align-items: flex-start;
       }
     }
+
   </style>
 </head>
 
 <body>
 
-  <nav class="navbar">
-    <div class="nav-name">Robert Lilly</div>
-    <div class="nav-links">
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#skills">Skills</a>
-      <a href="#experience">Experience</a>
-      <a href="#business-dna">Business DNA</a>
-      <a href="#resume">Resume</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </nav>
+<nav class="navbar">
+  <div class="nav-name">Robert Lilly</div>
 
-  <header class="hero">
-    <div class="hero-grid">
-      <div>
-        <div class="eyebrow">Mechanical Engineering Portfolio</div>
-        <h1>Robert Lilly</h1>
-        <h2>Honors Mechanical Engineering Student</h2>
-        <p>
-          I am a University of Connecticut Honors mechanical engineering student focused on robotics,
-          mechatronics, control systems, embedded technologies, and hands-on engineering projects.
-          My work blends mechanical design, software, sensors, analysis, and intelligent systems.
-        </p>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#experience">Experience</a>
+    <a href="#business-dna">Business DNA</a>
+    <a href="#resume">Resume</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
 
-        <div class="buttons">
-          <a class="button" href="#projects">View Projects</a>
-          <a class="button secondary" href="https://github.com/RMLMRiii" target="_blank">GitHub</a>
-          <a class="button secondary" href="https://www.linkedin.com/in/robertlilly3/" target="_blank">LinkedIn</a>
-        </div>
+<header class="hero">
+
+  <div class="hero-grid">
+
+    <div>
+
+      <div class="eyebrow">
+        University of Connecticut Honors Program
       </div>
 
-      <div class="profile-card">
-        <div class="profile-placeholder">RL</div>
-        <p>
-          Profile photo placeholder. This can later be replaced with a professional headshot,
-          robotics project photo, CAD render, or engineering lab image.
-        </p>
-      </div>
-    </div>
-  </header>
+      <h1>Robert Lilly</h1>
 
-  <section class="section fade-in" id="about">
-    <h2 class="section-title">About</h2>
-    <p class="section-lead">
-      I am building a portfolio around mechanical engineering, robotics, intelligent systems,
-      and practical technical problem solving.
-    </p>
+      <h2>
+        Honors Mechanical Engineering Student
+      </h2>
 
-    <div class="split">
-      <div class="panel">
-        <h3>Engineering Focus</h3>
-        <p>
-          My interests include robotics systems, mechatronics, control systems, embedded systems,
-          CAD modeling, simulation, and engineering analysis. I am especially drawn to projects
-          where mechanical systems, electronics, programming, and design decisions come together.
-        </p>
-      </div>
-
-      <div class="panel">
-        <h3>Education</h3>
-        <p>
-          <strong>University of Connecticut</strong><br>
-          Bachelor of Science in Mechanical Engineering<br>
-          University Honors Program<br>
-          Expected Graduation: 2028
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section fade-in" id="projects">
-    <h2 class="section-title">Featured Projects</h2>
-    <p class="section-lead">
-      A growing collection of engineering, robotics, software, and hardware projects.
-    </p>
-
-    <div class="cards">
-      <div class="card">
-        <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=900&auto=format&fit=crop');"></div>
-        <div class="card-content">
-          <h3>Arduino Ultrasonic Sensor Project</h3>
-          <p>
-            Designed an Arduino-based ultrasonic sensing system with LED feedback for obstacle
-            and distance detection using sensors, LEDs, microcontrollers, and basic circuit design.
-          </p>
-          <a class="card-link" href="https://github.com/RMLMRiii" target="_blank">View on GitHub →</a>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=900&auto=format&fit=crop');"></div>
-        <div class="card-content">
-          <h3>Robotics & Engineering Software</h3>
-          <p>
-            Developed Python and MATLAB tools involving inverse kinematics, control-system response
-            analysis, beam reaction calculations, and stress-strain modeling.
-          </p>
-          <a class="card-link" href="https://github.com/RMLMRiii" target="_blank">View GitHub Portfolio →</a>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?q=80&w=900&auto=format&fit=crop');"></div>
-        <div class="card-content">
-          <h3>Simulation & Engineering Analysis</h3>
-          <p>
-            Completed coursework and modeling projects using ANSYS Workbench for engineering
-            simulation and analysis workflows.
-          </p>
-          <a class="card-link" href="https://github.com/RMLMRiii" target="_blank">View Related Work →</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section fade-in" id="skills">
-    <h2 class="section-title">Skills & Tools</h2>
-    <p class="section-lead">
-      Technical areas I am developing through coursework, projects, robotics organizations, and independent work.
-    </p>
-
-    <div class="grid-4">
-      <div class="skill">Python</div>
-      <div class="skill">MATLAB</div>
-      <div class="skill">SolidWorks</div>
-      <div class="skill">CAD Modeling</div>
-      <div class="skill">Arduino</div>
-      <div class="skill">ANSYS Workbench</div>
-      <div class="skill">Engineering Analysis</div>
-      <div class="skill">Control Systems</div>
-      <div class="skill">Robotics</div>
-      <div class="skill">Mechatronics</div>
-      <div class="skill">Embedded Systems</div>
-      <div class="skill">Mechanical Design</div>
-    </div>
-  </section>
-
-  <section class="section fade-in" id="experience">
-    <h2 class="section-title">Experience & Involvement</h2>
-    <p class="section-lead">
-      Engineering organizations, leadership experience, and technical growth.
-    </p>
-
-    <div class="split">
-      <div class="panel">
-        <h3>Engineering Organizations</h3>
-        <ul>
-          <li>FIRST, at UConn</li>
-          <li>Underwater Robotics Team at UConn</li>
-          <li>FROST Robotics Club</li>
-          <li>VEX Robotics Club</li>
-        </ul>
-      </div>
-
-      <div class="panel">
-        <h3>Awards & Certifications</h3>
-        <ul>
-          <li>Dean’s List — Spring 2025</li>
-          <li>IBM AI Fundamentals Certification</li>
-          <li>Teacher’s Appreciation Scholarship — 2024</li>
-          <li>3rd Place — Southern New England VEX Championship</li>
-          <li>First Degree Black Belt in Kempo Karate</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section class="section dark-section fade-in" id="business-dna">
-    <div class="dark-inner">
-      <h2 class="section-title">Business DNA</h2>
-      <p class="section-lead">
-        My professional identity is built around disciplined growth, technical curiosity,
-        systems thinking, hands-on learning, and the ability to connect mechanical design,
-        software, electronics, and real-world problem solving.
+      <p>
+        I am a University of Connecticut Honors mechanical engineering student focused on robotics,
+        mechatronics, control systems, embedded technologies, and hands-on engineering projects.
+        My work blends mechanical design, software, sensors, analysis, and intelligent systems.
       </p>
 
-      <div class="mini-grid">
-        <div class="mini-card">
-          <h3>Systems Thinker</h3>
-          <p>I like understanding how parts connect into full engineering systems.</p>
-        </div>
-
-        <div class="mini-card">
-          <h3>Hands-On Builder</h3>
-          <p>I learn best by building, testing, documenting, and improving projects.</p>
-        </div>
-
-        <div class="mini-card">
-          <h3>Robotics Focused</h3>
-          <p>My long-term direction centers on robotics, mechatronics, and intelligent machines.</p>
-        </div>
-
-        <div class="mini-card">
-          <h3>Growth Driven</h3>
-          <p>I am actively developing my technical skills through coursework and independent projects.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section fade-in" id="resume">
-    <h2 class="section-title">Resume</h2>
-    <p class="section-lead">
-      Download my resume or view my project work through GitHub and LinkedIn.
-    </p>
-
-    <div class="resume-box">
-      <div>
-        <h3>Robert Lilly Resume</h3>
-        <p>
-          Mechanical engineering, robotics, software tools, Arduino projects,
-          engineering analysis, leadership, and technical involvement.
-        </p>
-      </div>
-
       <div class="buttons">
-        <a class="button dark" href="Robert-Lilly-Resume.pdf" target="_blank">Download Resume</a>
-        <a class="button dark" href="https://github.com/RMLMRiii" target="_blank">GitHub</a>
-        <a class="button dark" href="https://www.linkedin.com/in/robertlilly3/" target="_blank">LinkedIn</a>
-      </div>
-    </div>
-  </section>
 
-  <section class="section contact fade-in" id="contact">
-    <h2 class="section-title">Contact</h2>
-    <p class="section-lead" style="margin-left: auto; margin-right: auto;">
-      Connect with me through LinkedIn or explore my work on GitHub.
+        <a class="button" href="#projects">
+          View Projects
+        </a>
+
+        <a class="button secondary"
+           href="https://github.com/RMLMRiii"
+           target="_blank">
+          GitHub
+        </a>
+
+        <a class="button secondary"
+           href="https://www.linkedin.com/in/robertlilly3/"
+           target="_blank">
+          LinkedIn
+        </a>
+
+      </div>
+
+    </div>
+
+    <div class="profile-card">
+
+      <div class="profile-placeholder">
+        RL
+      </div>
+
+      <p>
+        Placeholder for a future professional photo, robotics project image,
+        or engineering lab portrait.
+      </p>
+
+    </div>
+
+  </div>
+
+</header>
+
+<section class="section fade-in" id="about">
+
+  <h2 class="section-title">About</h2>
+
+  <p class="section-lead">
+    I am building a portfolio around robotics, mechanical engineering,
+    intelligent systems, embedded technologies, and hands-on technical problem solving.
+  </p>
+
+  <div class="split">
+
+    <div class="panel">
+
+      <h3>Engineering Focus</h3>
+
+      <p>
+        My interests include robotics systems, mechatronics, control systems,
+        embedded systems, CAD modeling, simulation, and engineering analysis.
+        I am especially interested in projects where software, electronics,
+        mechanical systems, and intelligent design all work together.
+      </p>
+
+    </div>
+
+    <div class="panel">
+
+      <h3>Education</h3>
+
+      <p>
+        <strong>University of Connecticut</strong><br>
+        Bachelor of Science in Mechanical Engineering<br>
+        University Honors Program<br>
+        Expected Graduation: 2028
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section fade-in" id="projects">
+
+  <h2 class="section-title">Featured Projects</h2>
+
+  <p class="section-lead">
+    Engineering, robotics, hardware, software, and technical analysis projects.
+  </p>
+
+  <div class="cards">
+
+    <div class="card">
+
+      <div class="card-img"
+           style="background-image:url('https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=900&auto=format&fit=crop');">
+      </div>
+
+      <div class="card-content">
+
+        <h3>Arduino Ultrasonic Sensor</h3>
+
+        <p>
+          Designed an Arduino-based ultrasonic sensing system with LED feedback
+          for obstacle and distance detection using sensors, LEDs, and microcontrollers.
+        </p>
+
+        <a class="card-link"
+           href="https://github.com/RMLMRiii"
+           target="_blank">
+          View on GitHub →
+        </a>
+
+      </div>
+
+    </div>
+
+    <div class="card">
+
+      <div class="card-img"
+           style="background-image:url('https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=900&auto=format&fit=crop');">
+      </div>
+
+      <div class="card-content">
+
+        <h3>Engineering Software Tools</h3>
+
+        <p>
+          Developed Python and MATLAB engineering tools involving inverse kinematics,
+          control systems, stress-strain analysis, and engineering calculations.
+        </p>
+
+        <a class="card-link"
+           href="https://github.com/RMLMRiii"
+           target="_blank">
+          View GitHub Portfolio →
+        </a>
+
+      </div>
+
+    </div>
+
+    <div class="card">
+
+      <div class="card-img"
+           style="background-image:url('https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?q=80&w=900&auto=format&fit=crop');">
+      </div>
+
+      <div class="card-content">
+
+        <h3>Engineering Simulation</h3>
+
+        <p>
+          Coursework and technical modeling experience using ANSYS Workbench
+          for simulation, engineering analysis, and design workflows.
+        </p>
+
+        <a class="card-link"
+           href="https://github.com/RMLMRiii"
+           target="_blank">
+          View Related Work →
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section fade-in" id="skills">
+
+  <h2 class="section-title">Skills & Tools</h2>
+
+  <p class="section-lead">
+    Technical areas developed through coursework, engineering organizations,
+    robotics involvement, and independent projects.
+  </p>
+
+  <div class="grid-4">
+
+    <div class="skill">Python</div>
+    <div class="skill">MATLAB</div>
+    <div class="skill">SolidWorks</div>
+    <div class="skill">CAD Modeling</div>
+
+    <div class="skill">Arduino</div>
+    <div class="skill">ANSYS Workbench</div>
+    <div class="skill">Engineering Analysis</div>
+    <div class="skill">Control Systems</div>
+
+    <div class="skill">Robotics</div>
+    <div class="skill">Mechatronics</div>
+    <div class="skill">Embedded Systems</div>
+    <div class="skill">Mechanical Design</div>
+
+  </div>
+
+</section>
+
+<section class="section fade-in" id="experience">
+
+  <h2 class="section-title">Experience & Organizations</h2>
+
+  <div class="split">
+
+    <div class="panel">
+
+      <h3>Engineering Organizations</h3>
+
+      <ul>
+        <li>FIRST at UConn</li>
+        <li>Underwater Robotics Team at UConn</li>
+        <li>FROST Robotics Club</li>
+        <li>VEX Robotics Club</li>
+      </ul>
+
+    </div>
+
+    <div class="panel">
+
+      <h3>Awards & Certifications</h3>
+
+      <ul>
+        <li>Dean’s List — Spring 2025</li>
+        <li>IBM AI Fundamentals Certification</li>
+        <li>3rd Place — Southern New England VEX Championship</li>
+        <li>Teacher’s Appreciation Scholarship</li>
+        <li>First Degree Black Belt in Kempo Karate</li>
+      </ul>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section dark-section fade-in" id="business-dna">
+
+  <div class="dark-inner">
+
+    <h2 class="section-title">Business DNA</h2>
+
+    <p class="section-lead">
+      My professional identity is built around disciplined growth,
+      systems thinking, technical curiosity, and connecting software,
+      robotics, electronics, and engineering analysis into practical solutions.
     </p>
 
-    <div class="buttons" style="justify-content: center;">
-      <a class="button dark" href="https://github.com/RMLMRiii" target="_blank">GitHub</a>
-      <a class="button dark" href="https://www.linkedin.com/in/robertlilly3/" target="_blank">LinkedIn</a>
+    <div class="mini-grid">
+
+      <div class="mini-card">
+        <h3>Systems Thinker</h3>
+        <p>I like understanding how complex engineering systems interact.</p>
+      </div>
+
+      <div class="mini-card">
+        <h3>Hands-On Builder</h3>
+        <p>I learn through building, testing, improving, and documenting projects.</p>
+      </div>
+
+      <div class="mini-card">
+        <h3>Robotics Focused</h3>
+        <p>My long-term interests center on robotics and intelligent machines.</p>
+      </div>
+
+      <div class="mini-card">
+        <h3>Growth Driven</h3>
+        <p>I continuously develop technical skills through projects and coursework.</p>
+      </div>
+
     </div>
-  </section>
 
-  <footer>
-    © 2026 Robert Lilly. Built with GitHub Pages.
-  </footer>
+  </div>
 
-  <script>
-    const fadeElements = document.querySelectorAll(".fade-in");
+</section>
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-        }
-      });
-    }, {
-      threshold: 0.15
+<section class="section fade-in" id="resume">
+
+  <h2 class="section-title">Resume</h2>
+
+  <div class="resume-box">
+
+    <div>
+
+      <h3>Professional Resume</h3>
+
+      <p>
+        Mechanical engineering, robotics, software development,
+        embedded systems, technical analysis, and engineering organizations.
+      </p>
+
+    </div>
+
+    <div class="buttons">
+
+      <a class="button dark"
+         href="Robert-Lilly-Resume.pdf"
+         target="_blank">
+        Download Resume
+      </a>
+
+      <a class="button dark"
+         href="https://github.com/RMLMRiii"
+         target="_blank">
+        GitHub
+      </a>
+
+      <a class="button dark"
+         href="https://www.linkedin.com/in/robertlilly3/"
+         target="_blank">
+        LinkedIn
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section contact fade-in" id="contact">
+
+  <h2 class="section-title">Contact</h2>
+
+  <p class="section-lead"
+     style="margin-left:auto;margin-right:auto;">
+    Connect with me through LinkedIn or explore my engineering projects on GitHub.
+  </p>
+
+  <div class="buttons"
+       style="justify-content:center;">
+
+    <a class="button dark"
+       href="https://github.com/RMLMRiii"
+       target="_blank">
+      GitHub
+    </a>
+
+    <a class="button dark"
+       href="https://www.linkedin.com/in/robertlilly3/"
+       target="_blank">
+      LinkedIn
+    </a>
+
+  </div>
+
+</section>
+
+<footer>
+  © 2026 Robert Lilly • Mechanical Engineering Portfolio
+</footer>
+
+<script>
+
+  const fadeElements = document.querySelectorAll(".fade-in");
+
+  const observer = new IntersectionObserver((entries) => {
+
+    entries.forEach(entry => {
+
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+      }
+
     });
 
-    fadeElements.forEach(element => observer.observe(element));
-  </script>
+  }, {
+    threshold: 0.15
+  });
+
+  fadeElements.forEach(element => observer.observe(element));
+
+</script>
 
 </body>
 </html>
