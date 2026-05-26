@@ -1,348 +1,791 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Robert Lilly | Mechanical Engineering & Robotics Portfolio</title>
-    <style>
-        /* --- GLOBAL & BASE STYLES --- */
-        * {
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
-        body {
-            margin: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
-            background: #f4f7fb;
-            color: #111827;
-        }
-        a {
-            text-decoration: none;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        /* --- FIXED STICKY NAVBAR --- */
-        .navbar {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            min-height: 72px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 10%;
-            background: rgba(255, 255, 255, 0.92);
-            backdrop-filter: blur(16px);
-            box-shadow: 0 1px 18px rgba(15, 23, 42, 0.08);
-        }
-        .nav-name {
-            font-size: 21px;
-            font-weight: 800;
-            color: #0f172a;
-            letter-spacing: -0.03em;
-        }
-        .nav-links {
-            display: flex;
-            gap: 24px;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: flex-end;
-        }
-        .nav-links a {
-            color: #475569;
-            font-weight: 600;
-            font-size: 15px;
-            transition: 0.2s ease;
-        }
-        .nav-links a:hover {
-            color: #0284c7;
-        }
+  <title>Robert Lilly | Mechanical Engineering & Robotics Portfolio</title>
 
-        /* --- HERO SECTION --- */
-        .hero {
-            min-height: 82vh;
-            display: flex;
-            align-items: flex-start;
-            justify-content: center;
-            padding: 55px 0 45px;
-            color: white;
-            background-image: linear-gradient(90deg, rgba(2, 6, 23, 0.92), rgba(2, 6, 23, 0.60)), 
-                             url("https://unsplash.com");
-            background-size: cover;
-            background-position: center;
-        }
-        .hero-wrapper {
-            width: 80%;
-            max-width: 1350px;
-            margin: 0 auto;
-            background: rgba(10, 15, 30, 0.28);
-            backdrop-filter: blur(4px);
-            border-radius: 34px;
-            padding: 70px;
-            border: 1px solid rgba(255, 255, 255, 0.06);
-        }
-        .hero-grid {
-            display: grid;
-            gap: 54px;
-            grid-template-columns: 260px minmax(0, 1fr);
-            align-items: center;
-        }
-        .eyebrow {
-            color: #7dd3fc;
-            text-transform: uppercase;
-            letter-spacing: 0.18em;
-            font-size: 13px;
-            font-weight: 800;
-            margin-bottom: 20px;
-        }
-        h1 {
-            font-size: clamp(48px, 7vw, 84px);
-            line-height: 0.95;
-            margin: 0 0 18px;
-            letter-spacing: -0.06em;
-        }
-        .hero h2 {
-            font-size: clamp(24px, 3vw, 34px);
-            color: #e2e8f0;
-            margin: 0 0 28px;
-            font-weight: 500;
-        }
-        .hero p {
-            max-width: 700px;
-            font-size: 19px;
-            line-height: 1.8;
-            color: #cbd5e1;
-        }
+  <style>
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
 
-        /* --- INTERACTIVE PROFILE CARD --- */
-        .profile-card {
-            padding: 16px;
-            border-radius: 24px;
-            background: rgba(80, 80, 90, 0.32);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.10);
-            box-shadow: 0 14px 34px rgba(0, 0, 0, 0.24);
-            width: 260px;
-            justify-self: start;
-        }
-        .profile-image {
-            width: 100%;
-            height: 255px;
-            object-fit: cover;
-            object-position: center top;
-            border-radius: 22px;
-            border: 1px solid rgba(255, 255, 255, 0.14);
-            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.30);
-            display: block;
-            margin: 0 auto 14px;
-        }
-        .profile-card p {
-            color: #e2e8f0;
-            font-size: 14px;
-            line-height: 1.7;
-            margin: 0;
-            text-align: center;
-        }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      background: #f4f7fb;
+      color: #111827;
+    }
 
-        /* --- VISUAL HIERARCHY BUTTONS --- */
-        .buttons {
-            display: flex;
-            gap: 14px;
-            flex-wrap: wrap;
-            margin-top: 34px;
-        }
-        .button {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 14px 24px;
-            border-radius: 999px;
-            background: #38bdf8;
-            color: #020617;
-            font-weight: 800;
-            transition: all 0.25s ease;
-            box-shadow: 0 12px 30px rgba(56, 189, 248, 0.28);
-        }
-        .button:hover {
-            transform: translateY(-3px);
-            background: #7dd3fc;
-        }
-        .button.secondary {
-            background: transparent;
-            color: white;
-            border: 1px solid rgba(255, 255, 255, 0.45);
-            box-shadow: none;
-        }
-        .button.secondary:hover {
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
-        }
-        .button.dark {
-            background: #0f172a;
-            color: white;
-            box-shadow: 0 10px 26px rgba(15, 23, 42, 0.16);
-        }
-        .button.dark:hover {
-            background: #1e293b;
-            color: white;
-        }
+    a {
+      text-decoration: none;
+    }
 
-        /* --- CORE PAGE SECTIONS --- */
-        .section {
-            width: 80%;
-            max-width: 1350px;
-            margin: 0 auto;
-            padding: 100px 0;
-        }
-        .section-title {
-            font-size: clamp(36px, 4vw, 50px);
-            letter-spacing: -0.05em;
-            margin: 0 0 18px;
-        }
-        .section-lead {
-            max-width: 850px;
-            font-size: 18px;
-            line-height: 1.8;
-            color: #475569;
-            margin-bottom: 50px;
-        }
-        .split {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 26px;
-        }
-        .panel, .card {
-            background: white;
-            border-radius: 30px;
-            border: 1px solid #e2e8f0;
-            box-shadow: 0 18px 50px rgba(15, 23, 42, 0.08);
-        }
-        .panel {
-            padding: 38px;
-        }
-        .panel h3, .card h3 {
-            margin-top: 0;
-            color: #0f172a;
-        }
-        .panel p, .panel li, .card p {
-            color: #475569;
-            line-height: 1.8;
-        }
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      min-height: 72px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 10%;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(16px);
+      box-shadow: 0 1px 18px rgba(15,23,42,0.08);
+    }
 
-        /* --- ENHANCED SKILLS SUBGRID --- */
-        .skills-container {
-            display: flex;
-            flex-direction: column;
-            gap: 32px;
-        }
-        .skills-category h3 {
-            margin: 0 0 16px 0;
-            font-size: 20px;
-            color: #0f172a;
-            border-left: 4px solid #38bdf8;
-            padding-left: 12px;
-        }
-        .grid-4 {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 16px;
-        }
-        .skill {
-            padding: 18px;
-            border-radius: 18px;
-            background: white;
-            border: 1px solid #e2e8f0;
-            font-weight: 800;
-            color: #1e293b;
-            box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
-            text-align: center;
-        }
+    .nav-name {
+      font-size: 21px;
+      font-weight: 800;
+      color: #0f172a;
+      letter-spacing: -0.03em;
+    }
 
-        /* --- PROJECT CARDS --- */
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 26px;
-        }
-        .card {
-            overflow: hidden;
-            transition: all 0.25s ease;
-        }
-        .card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 28px 70px rgba(15, 23, 42, 0.14);
-        }
-        .card-img {
-            height: 220px;
-            background-size: cover;
-            background-position: center;
-        }
-        .card-content {
-            padding: 28px;
-        }
-        .card-link {
-            display: inline-block;
-            margin-top: 18px;
-            color: #0284c7;
-            font-weight: 800;
-        }
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: flex-end;
+    }
 
-        /* --- EXPERIENCE & RESUME BOX --- */
-        .resume-box {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 24px;
-            padding: 40px;
-            border-radius: 30px;
-            background: linear-gradient(135deg, #ffffff, #eef6ff);
-            border: 1px solid #dbeafe;
-            box-shadow: 0 20px 60px rgba(15, 23, 42, 0.1);
-        }
-        .contact {
-            text-align: center;
-        }
-        footer {
-            padding: 40px 20px;
-            text-align: center;
-            background: white;
-            border-top: 1px solid #e2e8f0;
-            color: #64748b;
-        }
+    .nav-links a {
+      color: #475569;
+      font-weight: 600;
+      font-size: 15px;
+      transition: 0.2s ease;
+    }
 
-        /* --- SCROLL ANIMATIONS --- */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
-        }
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
+    .nav-links a:hover {
+      color: #0284c7;
+    }
 
-        /* --- RESPONSIVE TABLET STYLES --- */
-        @media (max-width: 1100px) {
-            .navbar {
-                flex-direction: column;
-                padding: 18px 6%;
-                gap: 12px;
-            }
-            .nav-links {
-                justify-content: center;
-                gap: 16px;
-            }
-            .hero-wrapper, .section {
-                width: 88%;
-            }
-            .hero-wrapper {
-                padding: 50px;
-            }
-            .hero-grid {
-                grid-template-columns: 1fr;
-            }
-            .profile-card {
-                justify-self: center;
-                width: 330px;
-                max-width: 100%;
-            }
-            .cards {
+    .hero {
+      min-height: 82vh;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 55px 0 45px;
+      color: white;
+      background-image:
+        linear-gradient(90deg, rgba(2,6,23,0.92), rgba(2,6,23,0.60)),
+        url("https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1800&auto=format&fit=crop");
+      background-size: cover;
+      background-position: center;
+    }
+
+    .hero-wrapper {
+      width: 80%;
+      max-width: 1350px;
+      margin: 0 auto;
+      background: rgba(10,15,30,0.28);
+      backdrop-filter: blur(4px);
+      border-radius: 34px;
+      padding: 70px;
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .hero-grid {
+  display: grid;
+  grid-template-columns: 260px minmax(0, 1fr);
+  gap: 54px;
+  align-items: center;
+    }
+
+    .eyebrow {
+      color: #7dd3fc;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 13px;
+      font-weight: 800;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: clamp(48px, 7vw, 84px);
+      line-height: 0.95;
+      margin: 0 0 18px;
+      letter-spacing: -0.06em;
+    }
+
+    .hero h2 {
+      font-size: clamp(24px, 3vw, 34px);
+      color: #e2e8f0;
+      margin: 0 0 28px;
+      font-weight: 500;
+    }
+
+    .hero p {
+      max-width: 700px;
+      font-size: 19px;
+      line-height: 1.8;
+      color: #cbd5e1;
+    }
+
+    .profile-card {
+  padding: 16px;
+  border-radius: 24px;
+  background: rgba(80,80,90,0.32);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.10);
+  box-shadow: 0 14px 34px rgba(0,0,0,0.24);
+  width: 260px;
+  justify-self: start;
+}
+
+    .profile-image {
+      width: 100%;
+      height: 255px;
+      object-fit: cover;
+      object-position: center top;
+      border-radius: 22px;
+      border: 1px solid rgba(255,255,255,0.14);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.30);
+      display: block;
+      margin: 0 auto 14px;
+    }
+
+    .profile-card p {
+      color: #e2e8f0;
+      font-size: 14px;
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 34px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 24px;
+      border-radius: 999px;
+      background: #38bdf8;
+      color: #020617;
+      font-weight: 800;
+      transition: all 0.25s ease;
+      box-shadow: 0 12px 30px rgba(56,189,248,0.28);
+    }
+
+    .button:hover {
+      transform: translateY(-3px);
+      background: #7dd3fc;
+    }
+
+    .button.secondary {
+      background: transparent;
+      color: white;
+      border: 1px solid rgba(255,255,255,0.45);
+      box-shadow: none;
+    }
+
+    .button.dark {
+      background: #0f172a;
+      color: white;
+      box-shadow: 0 10px 26px rgba(15,23,42,0.16);
+    }
+
+    .section {
+      width: 80%;
+      max-width: 1350px;
+      margin: 0 auto;
+      padding: 100px 0;
+    }
+
+    .section-title {
+      font-size: clamp(36px, 4vw, 50px);
+      letter-spacing: -0.05em;
+      margin: 0 0 18px;
+    }
+
+    .section-lead {
+      max-width: 850px;
+      font-size: 18px;
+      line-height: 1.8;
+      color: #475569;
+      margin-bottom: 50px;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 26px;
+    }
+
+    .panel,
+    .card {
+      background: white;
+      border-radius: 30px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 18px 50px rgba(15,23,42,0.08);
+    }
+
+    .panel {
+      padding: 38px;
+    }
+
+    .panel h3,
+    .card h3 {
+      margin-top: 0;
+      color: #0f172a;
+    }
+
+    .panel p,
+    .panel li,
+    .card p {
+      color: #475569;
+      line-height: 1.8;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 26px;
+    }
+
+    .card {
+      overflow: hidden;
+      transition: all 0.25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 28px 70px rgba(15,23,42,0.14);
+    }
+
+    .card-img {
+      height: 220px;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .card-content {
+      padding: 28px;
+    }
+
+    .card-link {
+      display: inline-block;
+      margin-top: 18px;
+      color: #0284c7;
+      font-weight: 800;
+    }
+
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .skill {
+      padding: 18px;
+      border-radius: 18px;
+      background: white;
+      border: 1px solid #e2e8f0;
+      font-weight: 800;
+      color: #1e293b;
+      box-shadow: 0 10px 24px rgba(15,23,42,0.06);
+    }
+
+    .resume-box {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+      padding: 40px;
+      border-radius: 30px;
+      background: linear-gradient(135deg, #ffffff, #eef6ff);
+      border: 1px solid #dbeafe;
+      box-shadow: 0 20px 60px rgba(15,23,42,0.1);
+    }
+
+    .contact {
+      text-align: center;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      background: white;
+      border-top: 1px solid #e2e8f0;
+      color: #64748b;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 1100px) {
+      .navbar {
+        padding: 18px 6%;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .nav-links {
+        justify-content: center;
+        gap: 16px;
+      }
+
+      .hero-wrapper,
+      .section {
+        width: 88%;
+      }
+
+      .hero-wrapper {
+        padding: 50px;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .profile-card {
+        justify-self: center;
+        width: 330px;
+        max-width: 100%;
+      }
+
+      .cards {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 700px) {
+      .navbar {
+        position: relative;
+        padding: 18px 24px;
+      }
+
+      .nav-name {
+        text-align: center;
+        font-size: 18px;
+      }
+
+      .nav-links {
+        gap: 12px;
+      }
+
+      .nav-links a {
+        font-size: 14px;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 35px 0;
+      }
+
+      .hero-wrapper {
+        width: 92%;
+        padding: 32px 24px;
+        border-radius: 26px;
+      }
+
+      h1 {
+        font-size: 46px;
+      }
+
+      .hero h2 {
+        font-size: 25px;
+      }
+
+      .hero p {
+        font-size: 16px;
+        line-height: 1.7;
+      }
+
+      .buttons {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .button {
+        width: 100%;
+      }
+
+      .profile-card {
+        width: 100%;
+        padding: 18px;
+      }
+
+      .profile-image {
+        height: auto;
+        aspect-ratio: 4 / 5;
+      }
+
+      .section {
+        width: 90%;
+        padding: 70px 0;
+      }
+
+      .split,
+      .cards,
+      .grid-4 {
+        grid-template-columns: 1fr;
+      }
+
+      .panel,
+      .resume-box {
+        padding: 26px;
+      }
+
+      .resume-box {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar">
+    <div class="nav-name">Robert Lilly | Mechanical Engineering Portfolio</div>
+
+    <div class="nav-links">
+      <a href="https://robertlilly.fyi">Home</a>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#resume">Resume</a>
+      <a href="#contact">Professional Links</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-wrapper">
+      <div class="hero-grid">
+
+        <div>
+          <div class="eyebrow">University of Connecticut Honors Program</div>
+
+          <h1>Robert Lilly</h1>
+
+          <h2>Mechanical Engineering Student<br>
+  Robotics • Controls • Embedded Systems</h2>
+          <p>
+            University of Connecticut Honors mechanical engineering student focused on robotics,
+  automation, embedded systems, intelligent machines,
+  and engineering analysis. Building technical experience through
+  hands-on engineering projects, simulation,
+  programming, and multidisciplinary systems design.
+
+          </p>
+
+          <div class="buttons">
+            <a class="button" href="#projects">View Projects</a>
+
+            <a class="button secondary"
+               href="https://github.com/RMLMRiii"
+               target="_blank">
+              GitHub
+            </a>
+
+            <a class="button secondary"
+               href="https://www.linkedin.com/in/robertlilly3/"
+               target="_blank">
+              LinkedIn
+            </a>
+          </div>
+        </div>
+
+        <div class="profile-card">
+          <img
+            src="robert lilly profile pic.png"
+            alt="Robert Lilly"
+            class="profile-image"
+          />
+
+          <p><i>
+            Robert Lilly, Mechanical Engineering Student
+          </i></p>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <section class="section fade-in" id="about">
+    <h2 class="section-title">About</h2>
+
+    <p class="section-lead">
+      I’m a Mechanical Engineering student in the University Honors Program at the University of Connecticut with a strong interest in robotics, automation, 
+      embedded systems, and intelligent systems. My goal is to work at the intersection of mechanical engineering, software, controls, and artificial intelligence 
+      to design systems that improve how people live and interact with the world around them.
+
+      <br>
+
+      I am especially drawn to projects that combine hands-on engineering with analytical problem solving. Through coursework, technical projects, engineering organizations, 
+      and independent learning, I continue developing skills in robotics systems, CAD modeling, programming, simulation, engineering analysis, and embedded technologies.
+
+      <br>
+
+      This portfolio represents not only the technical skills I am developing, but also my commitment to continuous learning, multidisciplinary problem solving, 
+      and meaningful engineering work.
+    </p>
+
+    <div class="split">
+      <div class="panel">
+        <h3>Engineering Focus</h3>
+
+        <p>
+          I am drawn to engineering work that brings together mechanics, electronics, software, and intelligent systems. My current interests include robotics, 
+          mechatronics, control systems, embedded technologies, CAD modeling, simulation, Arduino development, and Python-based engineering tools for analysis and automation.
+        </p>
+      </div>
+
+      <div class="panel">
+        <h3>Education</h3>
+
+        <p>
+           <strong>University of Connecticut</strong><br>
+           Bachelor of Science in Mechanical Engineering<br>
+           University Honors Program<br>
+           Focus Areas:<br>
+           Robotics • Embedded Systems • Controls • Intelligent Systems<br>
+           Expected Graduation: 2028
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section fade-in" id="projects">
+    <h2 class="section-title">Engineering Projects</h2>
+
+    <p class="section-lead">
+       Technical projects involving robotics, embedded systems,
+  engineering software, simulation,
+  automation, and hands-on engineering development.
+    </p>
+
+    <div class="cards">
+      <div class="card">
+        <div class="card-img"
+             style="background-image:url('https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=900&auto=format&fit=crop');">
+        </div>
+
+        <div class="card-content">
+          <h3>Arduino Obstacle Detection System</h3>
+
+          <p>
+            Designed an Arduino-based ultrasonic sensing system with LED feedback for obstacle and distance detection.
+          </p>
+
+          <a class="card-link"
+             href="https://github.com/RMLMRiii"
+             target="_blank">
+            View on GitHub →
+          </a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img"
+             style="background-image:url('https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=900&auto=format&fit=crop');">
+        </div>
+
+        <div class="card-content">
+          <h3>Engineering Analysis Software</h3>
+
+          <p>
+            Developed Python and MATLAB engineering tools involving control systems, inverse kinematics, and engineering analysis.
+          </p>
+
+          <a class="card-link"
+             href="https://github.com/RMLMRiii"
+             target="_blank">
+            View GitHub Portfolio →
+          </a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img"
+             style="background-image:url('https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?q=80&w=900&auto=format&fit=crop');">
+        </div>
+
+        <div class="card-content">
+          <h3>Simulation & Technical Analysis</h3>
+
+          <p>
+            Experience using ANSYS Workbench for engineering simulation, analysis, and technical workflows.
+          </p>
+
+          <a class="card-link"
+             href="https://github.com/RMLMRiii"
+             target="_blank">
+            View Related Work →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section fade-in" id="skills">
+    <h2 class="section-title">Engineering Areas</h2>
+
+    <p class="section-lead">
+      My technical interests focus on robotics, embedded systems,
+  controls, simulation, intelligent machines,
+  and multidisciplinary engineering design.
+  I am building experience through coursework,
+  engineering organizations, technical projects,
+  and independent development work.
+    </p>
+
+    <div class="grid-4">
+      <div class="skill">Arduino</div>
+
+<div class="skill">Robotics</div>
+<div class="skill">Artificial Intelligence</div>
+<div class="skill">Embedded Systems</div>
+<div class="skill">Control Systems</div>
+<div class="skill">Engineering Analysis</div>
+<div class="skill">CAD Modeling</div>
+<div class="skill">ANSYS Workbench</div>
+<div class="skill">Mechanical Design</div>
+<div class="skill">Mechatronics</div>
+<div class="skill">Simulation & Modeling</div>
+    </div>
+  </section>
+
+  <section class="section fade-in" id="experience">
+    <h2 class="section-title">Engineering Involvement</h2>
+
+    <p class="section-lead">
+      My experience combines engineering organizations, robotics involvement, leadership, teaching, and long-term discipline.
+    </p>
+
+    <div class="split">
+      <div class="panel">
+        <h3>Organizations & Technical Involvement</h3>
+
+        <ul>
+         <li>American Society of Mechanical Engineers (ASME)</li>
+         <li>FIRST at UConn</li>
+         <li>Underwater Robotics Team at UConn</li>
+         <li>FROST Robotics Club</li>
+         <li>VEX Robotics</li>
+        </ul>
+      </div>
+
+      <div class="panel">
+        <h3>Achievements & Certifications</h3>
+
+        <ul>
+          <li>IBM AI Fundamentals Certification</li>
+          <li>Dean’s List — Spring 2025</li>
+          <li>3rd Place — Southern New England VEX Championship</li>
+          <li>First Degree Black Belt in Kempo Karate</li>
+          <li>Teacher’s Appreciation Scholarship</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section fade-in" id="resume">
+    <h2 class="section-title">Resume</h2>
+
+    <div class="resume-box">
+      <div>
+        <h3>Professional Resume</h3>
+
+        <p>
+           Mechanical engineering student portfolio including robotics,
+  embedded systems, engineering analysis,
+  technical projects, simulation work,
+  and multidisciplinary engineering development.
+        </p>
+      </div>
+
+      <div class="buttons">
+        <a class="button dark"
+           href="Robert-Lilly-Resume.pdf"
+           target="_blank">
+          Download Resume
+        </a>
+
+        <a class="button dark"
+           href="https://github.com/RMLMRiii"
+           target="_blank">
+          GitHub
+        </a>
+
+        <a class="button dark"
+           href="https://www.linkedin.com/in/robertlilly3/"
+           target="_blank">
+          LinkedIn
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section contact fade-in" id="contact">
+    <h2 class="section-title">Professional Links</h2>
+
+    <p class="section-lead" style="margin-left:auto;margin-right:auto;">
+      Connect with me professionally through LinkedIn,
+  explore engineering projects on GitHub,
+  or download my resume for additional technical experience and project information.
+    </p>
+
+    <div class="buttons" style="justify-content:center;">
+      <a class="button dark"
+         href="https://github.com/RMLMRiii"
+         target="_blank">
+        GitHub
+      </a>
+
+      <a class="button dark"
+         href="https://www.linkedin.com/in/robertlilly3/"
+         target="_blank">
+        LinkedIn
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Robert Lilly • Mechanical Engineering Portfolio
+  </footer>
+
+  <script>
+    const fadeElements = document.querySelectorAll(".fade-in");
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    }, {
+      threshold: 0.15
+    });
+
+    fadeElements.forEach(element =>
+      observer.observe(element)
+    );
+  </script>
+
+</body>
+
+</html>
